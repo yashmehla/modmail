@@ -100,8 +100,8 @@ class Modmail(commands.Cog):
         embed.add_field(
             name="Thanks for using our bot!",
             value="If you like what you see, consider giving the "
-            "[repo a star](https://github.com/kyb3r/modmail) :star: and if you are "
-            "feeling extra generous, buy us coffee on [Patreon](https://patreon.com/kyber) :heart:!",
+            "Feedback :star: and if you are feeling extra generous,"
+            "Then Purchase this bot by Contacting YASH MEHLA#9999 :heart:!",
         )
 
         embed.set_footer(text=f'Type "{self.bot.prefix}help" for a complete list of commands.')
@@ -537,7 +537,7 @@ class Modmail(commands.Cog):
         if mention in mentions:
             embed = discord.Embed(
                 color=self.bot.error_color,
-                description=f"{mention} is not subscribed to this thread.",
+                description=f"{mention} is already subscribed to this thread.",
             )
         else:
             mentions.append(mention)
