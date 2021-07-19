@@ -372,7 +372,7 @@ class Utility(commands.Cog):
         """Shows the sponsors of this project."""
 
         async with self.bot.session.get(
-            "TO BE ADDED SOON"
+            "https://discord.com/users/791534816503660574"
         ) as resp:
             data = loads(await resp.text())
 
