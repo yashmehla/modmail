@@ -323,7 +323,7 @@ class Utility(commands.Cog):
         embed.add_field(name="Uptime", value=self.bot.uptime)
         embed.add_field(name="Latency", value=f"{self.bot.latency * 1000:.2f} ms")
         embed.add_field(name="Version", value=f"`{self.bot.version}`")
-        embed.add_field(name="Authors", value="`kyb3r`, `Taki`, `fourjr`")
+        embed.add_field(name="Authors", value="`YASH MEHLA`")
         embed.add_field(name="Hosting Method", value=self.bot.hosting_method.name)
 
         changelog = await Changelog.from_url(self.bot)
@@ -343,31 +343,38 @@ class Utility(commands.Cog):
 
         embed.add_field(
             name="Want Modmail in Your Server?",
-            value="Follow the installation guide on [GitHub](https://github.com/kyb3r/modmail/) "
-            "and join our [Discord server](https://discord.gg/F34cRU8)!",
+            value="Contact YASH MEHLA#9999 for Pricing and bot related info"
+            "and remember to follow to Instructions provided by YASH MEHLA",
             inline=False,
         )
 
         embed.add_field(
             name="Support the Developers",
-            value="This bot is completely free for everyone. We rely on kind individuals "
-            "like you to support us on [`Patreon`](https://patreon.com/kyber) (perks included) "
-            "to keep this bot free forever!",
+            value="This bot is under Premium cateogry"
+            "If you like the bot then Please support the Developers by Purchasing this bot."
+            "to keep this bot alive forever!",
+            inline=False,
+        )
+
+        embed.add_field(
+            name="Project Sponsors",
+            value=f"Checkout the people who supported Modmail with command `{self.bot.prefix}sponsors`!",
             inline=False,
         )
 
         embed.set_footer(text=footer)
         await ctx.send(embed=embed)
 
-    @commands.command()
+    @commands.command(aliases=["sponsor"])
     @checks.has_permissions(PermissionLevel.REGULAR)
     @utils.trigger_typing
     async def sponsors(self, ctx):
-        """Shows a list of sponsors."""
-        resp = await self.bot.session.get(
-            "https://raw.githubusercontent.com/kyb3r/modmail/master/SPONSORS.json"
-        )
-        data = loads(await resp.text())
+        """Shows the sponsors of this project."""
+
+        async with self.bot.session.get(
+            "TO BE ADDED SOON"
+        ) as resp:
+            data = loads(await resp.text())
 
         embeds = []
 
@@ -1697,7 +1704,7 @@ class Utility(commands.Cog):
         """
         Commands relating to logviewer oauth2 login authentication.
 
-        This functionality on your logviewer site is a [**Patron**](https://patreon.com/kyber) only feature.
+        This functionality on your logviewer site is a Premium only feature.
         """
         await ctx.send_help(ctx.command)
 
@@ -1946,7 +1953,7 @@ class Utility(commands.Cog):
 
         desc = (
             f"The latest version is [`{self.bot.version}`]"
-            "(https://github.com/kyb3r/modmail/blob/master/bot.py#L25)"
+            "©YASH MEHLA 2021"
         )
 
         if self.bot.version >= parse_version(latest.version) and flag.lower() != "force":
